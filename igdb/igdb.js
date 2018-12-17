@@ -26,7 +26,7 @@ var http = axios.create({
     // 'user-key': '418b95d2f972c7d0b1135e53806a94b5',
   }
 })
-git push -u origin master
+
 /**
  * Get the individual game by id from a list query
  * @param {*} id

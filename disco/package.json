@@ -1,13 +1,13 @@
 {
-  "name": "v-list",
+  "name": "disco",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run build:before && npm run build:wc && npm run build:after",
     "build:before": "rm -rf dist && rm -rf build",
-    "build:wc": "vue-cli-service build --target wc --name v-list ./src/main.js",
-    "build:after": "mv dist v-list && cd v-list && npm init -y && cd .. && mkdir -p build && mv v-list build",
+    "build:wc": "vue-cli-service build --target wc-async --name disco 'src/components/export/*.vue'",
+    "build:after": "mv dist disco && cd disco && npm init -y && cd .. && mkdir -p build && mv disco build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

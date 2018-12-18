@@ -8,5 +8,3 @@ if (process.env.NODE_ENV !== 'production') {
     render: h => h(VGameAndFiltersList),
   }).$mount('#app')
 }
-
-export default VGameAndFiltersList

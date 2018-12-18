@@ -46,7 +46,7 @@ class App extends Component {
     return this.selectedGame && this.selectedGame.name
   }
 
-  get imgUrl () {
+  get selectedGameImgUrl () {
     if (this.selectedGame) {
       if (this.selectedGame.cover) return this.selectedGame.cover.url
       if (this.selectedGame.screenshots) return this.selectedGame.screenshots[0].url
@@ -59,16 +59,15 @@ class App extends Component {
     return (
       <div className="App">
         <header><h1>This is a header in react!</h1></header>
-        <v-list ref={this.list} selectable={true}></v-list>
-        <v-single-game
+        <disco-list ref={this.list} selectable={true}></disco-list>
+        <disco-single-game
           id={this.selectedGameId}
           hypes={this.selectedGameHypes}
-          numRatings={this.selectedGameNumRatings}
+          num-ratings={this.selectedGameNumRatings}
           rating={this.selectedGameRating}
-          releaseDate={this.selectedGameReleaseDate}
+          release-date={this.selectedGameReleaseDate}
           title={this.selectedGameTitle}
-          imgUrl={this.selectedGameImgUrl}
-        ></v-single-game>
+          img-url={this.selectedGameImgUrl}></disco-single-game>
         <footer>This is a footer in react!</footer>
       </div>
     );

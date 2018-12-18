@@ -1,5 +1,5 @@
 <template>
-<div class="VGameFiltersAndList">
+<div class="ListGame">
   <div class="filterBar">
     <FieldSearch
       label="Search"

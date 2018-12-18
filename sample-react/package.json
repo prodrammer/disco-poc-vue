@@ -6,9 +6,8 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "v-list": "file:../v-list/build/v-list",
-    "v-single-game": "file:../v-single-game/build/v-single-game",
-    "vue": "^2.5.21"
+    "vue": "^2.5.21",
+    "disco": "file:../disco/build/disco"
   },
   "scripts": {
     "start": "react-scripts start",

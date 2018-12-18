@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <v-list ref="list" selectable @selectedGameChanged="selectedGameChanged"></v-list>
-    <v-single-game :id="id" :hypes="hypes" :numRatings="numRatings" :rating="rating" :releaseDate="releaseDate" :title="title" :imgUrl="imgUrl"></v-single-game>
+    <disco-list-game ref="list" selectable @selectedGameChanged="selectedGameChanged"></disco-list-game>
+    <disco-single-game :id="id" :hypes="hypes" :num-ratings="numRatings" :rating="rating" :release-date="releaseDate" :title="title" :img-url="imgUrl"></disco-single-game>
   </div>
 </template>
 

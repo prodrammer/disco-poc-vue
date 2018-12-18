@@ -23,8 +23,7 @@
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26",
-    "v-list": "file:../v-list/build/v-list",
-    "v-single-game": "file:../v-single-game/build/v-single-game"
+    "disco": "file:../disco/build/disco"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",

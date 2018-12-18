@@ -37,7 +37,7 @@ export class AppComponent {
     return this.selectedGame && this.selectedGame.name
   }
 
-  get imgUrl () {
+  get selectedGameImgUrl () {
     if (this.selectedGame) {
       if (this.selectedGame.cover) return this.selectedGame.cover.url
       if (this.selectedGame.screenshots) return this.selectedGame.screenshots[0].url

@@ -14,17 +14,17 @@
   </div>
 
   <VGameCard
-    v-for="({ id, name, created_at, popularity, esrb, rating_count, rating, summary }) in games"
-    :key="id"
-    :id="id"
-    :title="name"
-    :hypes="popularity"
-    :numRatings="rating_count"
-    :rating="rating"
-    :releaseDate="created_at"
-    :selected="selectedGameId === id"
-    :summary="summary"
-    @gameSelected="handleGameCardClick(id)"
+    v-for="(item, index, key) in games"
+    :key="key"
+    :id="item.id"
+    :title="item.name"
+    :hypes="item.popularity"
+    :numRatings="item.rating_count"
+    :rating="item.rating"
+    :releaseDate="item.created_at"
+    :selected="selectedGameId === item.id"
+    :summary="item.summary"
+    @gameSelected="handleGameCardClick(item.id)"
   />
 </div>
 </template>
@@ -154,7 +154,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .filterBar {
   padding: 24px 0px;
   display: flex;

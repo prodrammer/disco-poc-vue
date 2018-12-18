@@ -3,6 +3,10 @@ import VGameAndFiltersList from './components/export/VGameFiltersAndList.vue'
 
 Vue.config.productionTip = false
 
-new Vue({
-  render: h => h(VGameAndFiltersList),
-}).$mount('#app')
+if (process.env.NODE_ENV !== 'production') {
+  new Vue({
+    render: h => h(VGameAndFiltersList),
+  }).$mount('#app')
+}
+
+export default VGameAndFiltersList

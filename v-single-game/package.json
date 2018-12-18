@@ -1,11 +1,13 @@
 {
-  "name": "discography",
+  "name": "v-single-game",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build:wc": "vue-cli-service build --target wc --name field-search ./src/main.js",
+    "build": "npm run build:before && npm run build:wc && npm run build:after",
+    "build:before": "rm -rf dist && rm -rf build",
+    "build:wc": "vue-cli-service build --target wc --name v-single-game ./src/main.js",
+    "build:after": "mv dist v-single-game && cd v-single-game && npm init -y && cd .. && mkdir -p build && mv v-single-game build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

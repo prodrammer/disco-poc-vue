@@ -7,7 +7,7 @@
   >
 
     <div class="gameCover">
-      <img :src="imgUrlClean" :alt="title + ' game cover'">
+      <img :src="imgUrl" :alt="title + ' game cover'">
     </div>
 
     <VRatings
@@ -70,11 +70,6 @@ export default {
   data: _ => ({
     addAnimation: false,
   }),
-  computed: {
-    imgUrlClean() {
-      return this.imgUrl !== null ? 'http:' + this.imgUrl : ''
-    },
-  },
   methods: {
     removeAnimation() {
       this.addAnimation = false

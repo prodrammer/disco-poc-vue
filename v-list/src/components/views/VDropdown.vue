@@ -121,7 +121,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .VDropdown {
   position: relative;
   width: 100%;

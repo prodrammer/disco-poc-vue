@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .VInput {
   width: 100%;
   display: flex;

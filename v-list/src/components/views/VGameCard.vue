@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import 'src/styles/mixins';
 
 // Styles for animation:

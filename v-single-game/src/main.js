@@ -6,3 +6,5 @@ Vue.config.productionTip = false
 new Vue({
   render: h => h(SingleGame),
 }).$mount('#app')
+
+export default SingleGame

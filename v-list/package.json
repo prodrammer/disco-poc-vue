@@ -1,11 +1,13 @@
 {
-  "name": "discography",
+  "name": "v-list",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build:wc": "vue-cli-service build --target wc --name field-search ./src/main.js",
+    "build": "npm run build:before && npm run build:wc && npm run build:after",
+    "build:before": "rm -rf dist && rm -rf build",
+    "build:wc": "vue-cli-service build --target wc --name v-list ./src/main.js",
+    "build:after": "mv dist v-list && cd v-list && npm init -y && cd .. && mkdir -p build && mv v-list build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

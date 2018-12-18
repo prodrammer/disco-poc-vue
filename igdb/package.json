@@ -1,5 +1,5 @@
 {
-  "name": "igdb",
+  "name": "igdb-api",
   "version": "1.0.0",
   "description": "",
   "main": "igdb.js",
@@ -18,6 +18,6 @@
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "ryanhaney",
   "license": "ISC"
 }

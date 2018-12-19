@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 Vue.config.productionTip = false
-Vue.config.ignoredElements = ['v-list', 'v-single-game']
+Vue.config.ignoredElements = [/disco-\w*/];
 
 new Vue({
   render: h => h(App),

@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="demo-container">
         <div className="demo-container__main">
-          <disco-list ref={this.list} selectable={true}></disco-list>
+          <disco-list-game ref={this.list} selectable={true}></disco-list-game>
         </div>
         <div className="demo-container__sidebar">
           <disco-single-game

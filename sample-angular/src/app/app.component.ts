@@ -30,7 +30,13 @@ export class AppComponent {
   }
 
   get selectedGameReleaseDate() {
-    return this.selectedGame && this.selectedGame.created_at
+    if (this.selectedGame && this.selectedGame.created_at) {
+      const date = new Date(this.selectedGame.created_at)
+      const month = date.toLocaleDateString('en-us', { month: 'long' })
+      const year = date.getFullYear()
+      return `${month} ${year}`
+    }
+    return undefined
   }
 
   get selectedGameTitle() {

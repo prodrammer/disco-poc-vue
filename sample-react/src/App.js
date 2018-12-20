@@ -39,7 +39,13 @@ class App extends Component {
   }
 
   get selectedGameReleaseDate() {
-    return this.selectedGame && this.selectedGame.created_at
+    if (this.selectedGame && this.selectedGame.created_at) {
+      const date = new Date(this.selectedGame.created_at)
+      const month = date.toLocaleDateString('en-us', { month: 'long' })
+      const year = date.getFullYear()
+      return `${month} ${year}`
+    }
+    return undefined
   }
 
   get selectedGameTitle() {
@@ -57,18 +63,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header><h1>This is a header in react!</h1></header>
-        <disco-list ref={this.list} selectable={true}></disco-list>
-        <disco-single-game
-          id={this.selectedGameId}
-          hypes={this.selectedGameHypes}
-          num-ratings={this.selectedGameNumRatings}
-          rating={this.selectedGameRating}
-          release-date={this.selectedGameReleaseDate}
-          title={this.selectedGameTitle}
-          img-url={this.selectedGameImgUrl}></disco-single-game>
-        <footer>This is a footer in react!</footer>
+      <div className="demo-container">
+        <div className="demo-container__main">
+          <disco-list ref={this.list} selectable={true}></disco-list>
+        </div>
+        <div className="demo-container__sidebar">
+          <disco-single-game
+            id={this.selectedGameId}
+            hypes={this.selectedGameHypes}
+            num-ratings={this.selectedGameNumRatings}
+            rating={this.selectedGameRating}
+            release-date={this.selectedGameReleaseDate}
+            title={this.selectedGameTitle}
+            img-url={this.selectedGameImgUrl}></disco-single-game>
+        </div>
       </div>
     );
   }

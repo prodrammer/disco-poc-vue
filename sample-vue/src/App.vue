@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
-    <disco-list-game ref="list" selectable @selectedGameChanged="selectedGameChanged"></disco-list-game>
-    <disco-single-game :id="id" :hypes="hypes" :num-ratings="numRatings" :rating="rating" :release-date="releaseDate" :title="title" :img-url="imgUrl"></disco-single-game>
+  <div id="app" class="demo-container">
+    <div class="demo-container__main">
+      <disco-list-game ref="list" selectable @selectedGameChanged="selectedGameChanged"></disco-list-game>
+    </div>
+    <div class="demo-container__sidebar">
+      <disco-single-game :id="id" :hypes="hypes" :num-ratings="numRatings" :rating="rating" :release-date="releaseDate" :title="title" :img-url="imgUrl"></disco-single-game>
+    </div>
   </div>
 </template>
 
@@ -28,7 +32,13 @@ export default {
       return this.selectedGame && this.selectedGame.rating
     },
     releaseDate () {
-      return this.selectedGame && this.selectedGame.created_at
+      if (this.selectedGame && this.selectedGame.created_at) {
+        const date = new Date(this.selectedGame.created_at)
+        const month = date.toLocaleDateString('en-us', { month: 'long' })
+        const year = date.getFullYear()
+        return `${month} ${year}`
+      }
+      return undefined
     },
     title () {
       return this.selectedGame && this.selectedGame.name
@@ -51,12 +61,35 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+
+.demo-container {
+  display: grid;
+  grid-template-columns: auto 480px;
+  grid-template-rows: auto;
+  grid-template-areas: "main sidebar";
+
+  align-content: stretch;
+  justify-content: stretch;
+  height: 100vh;
+  width: 100vw;
+}
+
+.demo-container__sidebar {
+  grid-area: sidebar;
+
+  background-color: #f3f1f1;
+  border-left: 1px solid #cfcfcf;
+}
+
+.demo-container__main {
+  grid-area: main;
+  overflow-y: scroll;
 }
 </style>

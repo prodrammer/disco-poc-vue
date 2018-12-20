@@ -1,2 +1,8 @@
-<disco-list-game selectable (selectedGameChanged)="selectedGameChanged($event)"></disco-list-game>
-<disco-single-game id="{{selectedGameId}}" hypes="{{selectedGameHypes}}" numRatings="{{selectedGameNumRatings}}" rating="{{selectedGameRating}}" releaseDate="{{selectedGameReleaseDate}}" title="{{selectedGameTitle}}" imgUrl="{{selectedGameImgUrl}}"></disco-single-game>
+<div class="demo-container">
+  <div class="demo-container__main">
+    <disco-list-game selectable (selectedGameChanged)="selectedGameChanged($event)"></disco-list-game>
+  </div>
+  <div class="demo-container__sidebar">
+    <disco-single-game id="{{selectedGameId}}" hypes="{{selectedGameHypes}}" numRatings="{{selectedGameNumRatings}}" rating="{{selectedGameRating}}" releaseDate="{{selectedGameReleaseDate}}" title="{{selectedGameTitle}}" imgUrl="{{selectedGameImgUrl}}"></disco-single-game>
+  </div>
+</div>
